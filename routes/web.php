@@ -26,7 +26,7 @@ Route::get('test-admin', function () {
 });
 
 // Admin Route
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']],
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']],
     function () {
         route::get('/', function () {
             return view('admin.index');
